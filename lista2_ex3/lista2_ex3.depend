@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1726368302 source:c:\users\t-gamer\onedrive\Área de trabalho\c\lista2_ex3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
