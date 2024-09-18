@@ -3,35 +3,47 @@
 
 int main()
 {
-    int operador;
-    float n1, n2, conta;
 
-    do {
-        printf("Selecione uma das opcoes: '1-Multiplicar', '2-Somar', '3-Subtrair', '4-Dividir', '5-Sair': ");
-        scanf("%d", &operador);
+    int opcao, n1, n2;
+    float conta;
 
-        if(operador != 5) {
-            printf("Digite o valor do primeiro numero: ");
-            scanf("%f", &n1);
+    do{
+        printf("Escolha um opcao = (1-Multiplicar, 2-Somar, 3-Subtrair, 4-Dividir, 5-Encerrar): ");
+        scanf("%d", &opcao);
 
-            printf("Digite o valor do segundo numero: ");
-            scanf("%f", &n2);
+        if(opcao <= 5) {
+            printf("Digite o numero 1: ");
+            scanf("%d", &n1);
+            printf("Digite o numero 2: ");
+            scanf("%d", &n2);
         }
 
-        if(operador == 1) {
-            conta = n1 * n2;
-        } else if(operador == 2) {
-            conta = n1 + n2;
-        } else if(operador == 3) {
-            conta = n1 - n2;
-        } else if(operador == 4) {
-            conta = n1 / n2;
-        } else if(operador <= 0 || operador > 5) {
-            printf("Digite um numero valido: ");
+        switch(opcao) {
+            case 1:
+                conta = n1 * n2;
+                break;
+            case 2:
+                conta = n1 + n2;
+                break;
+            case 3:
+                conta = n1 - n2;
+                break;
+            case 4:
+                conta = n1 / n2;
+                break;
+            case 5:
+                printf("Encerrando!");
+                break;
+            default:
+                printf("Opcao invalida! Digite novamente.\n");
+                break;
         }
-    } while(operador != 5);
 
-    printf("%.2f", conta);
+        if(opcao != 5 && opcao <= 5) {
+            printf("%.2f\n", conta);
+        }
+
+    } while(opcao != 5);
 
     return 0;
 }
